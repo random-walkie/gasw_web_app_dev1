@@ -9,6 +9,17 @@ Lab 1 demonstrates basic HTML structure and elements:
 - Basic elements used: head, body, title, h1, hr
 - Simple "Hello World" example showing text formatting
 
+## Lab 2 - Common HTML Elements
+
+Lab 2 covers fundamental HTML elements:
+
+- Text formatting tags (p, span, div)
+- Lists and tables
+- Forms and input elements
+- Links and images
+- Semantic HTML elements
+
 ### Repository Structure
 
 - `/lab1` - Contains basic HTML examples
+- `/lab2` - Contains common HTML elements examples
