@@ -1,0 +1,45 @@
+h1 {
+    color: purple;
+}
+
+p {
+    color: green;
+}
+
+p.underline {
+    text-decoration: underline;
+}
+
+#prices {
+    font-style: italic;
+    text-decoration: none;
+}
+
+#copyright {
+    background-color: red;
+    border-style: double;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* aside > a selects every <a> element which is a direct child of aside */
+/* aside a can be used to select any <a> element within the <aside> element*/
+/* style the basic unvisited link */
+aside > a:link {
+    color: green;
+}
+
+/* style a link when the user hovers over it */
+aside > a:hover {
+    color: red;
+}
+
+/* style a link that has been visited */
+aside > a:visited {
+    color: orange;
+}
+
+
+
+
