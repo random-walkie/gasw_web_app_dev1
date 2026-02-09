@@ -1,3 +1,4 @@
+/* Navigation styling */
 nav ul {
     list-style-type: none;
     background-color: #b6b2b2;
@@ -35,3 +36,13 @@ nav li a:hover {
     background-color: #0e812b;
     color: white;
 }
+
+/* Body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
+}
+
