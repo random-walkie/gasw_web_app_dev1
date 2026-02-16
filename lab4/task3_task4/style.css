@@ -146,3 +146,7 @@ table tr:nth-child(even) {
 table td:hover, table th:hover {
     background-color: #e78416;
 }
+
+.menu {
+    display: grid;
+}
