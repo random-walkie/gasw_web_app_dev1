@@ -1,0 +1,27 @@
+/* set width of the form */
+form {
+    width: 35em;
+}
+
+/* set width and height of the different elemnts */
+input[type="number"], input[type="tel"], input[type="email"], textarea, input[list], input[type="time"] {
+    width: 100%;
+    height: 2em;
+    /* larger font size inside the input fields */
+    font-size: 100%;
+}
+
+/* larger labels for better readability */
+label {
+    font-size: 1.2em;
+}
+
+fieldset {
+    background-color: gainsboro;
+}
+
+legend {
+    background-color: beige;
+    padding: 0.5em;
+    box-shadow: 0.1em 0.1em gray;
+}

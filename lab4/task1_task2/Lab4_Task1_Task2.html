@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<form method="get" action="">
+    <fieldset>
+        <legend>Order Type</legend>
+        <br>
+        <label for="delivery">Delivery</label>
+        <input type="radio" id="delivery" value="delivery" name="ordertype" checked>
+        <label for="pickup">Pickup</label>
+        <input type="radio" id="pickup" value="pickup" name="ordertype">
+        <br>
+        <br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Delivery Details</legend>
+        <label for="time">Delivery/Collection Time</label>
+        <br>
+        <input type="time" id="time" name="time"
+               min="10:00" max="16:00" required>
+        <br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Cake Details</legend>
+        <label for="cakesize">Cake Size</label>
+        <br>
+        <select id="cakesize" name="cakesize">
+            <option value="6in">6 inch</option>
+            <option value="9in">9 inch</option>
+            <option value="10in">10 inch</option>
+            <option value="12in">12 inch</option>
+        </select>
+        <br>
+
+        <label for="num_cakes">Number of Cakes</label>
+        <br>
+        <input type="number" id="num_cakes" name="num_cakes" min="1" max="100">
+        <br>
+
+        <label for="flavour">Choose your Cake Flavour</label>
+        <br>
+        <input list="flavour_list" name="flavour" id="flavour">
+        <br>
+
+        <datalist id="flavour_list">
+            <option value="Chocolate">
+            <option value="Cheesecake">
+            <option value="Coffee Cake">
+            <option value="Carrot Cake">
+            <option value="Sponge Cake">
+            <option value="Birthday Cake">
+        </datalist>
+    </fieldset>
+
+    <fieldset>
+        <legend>Contact Details</legend>
+        <label>Would you like to send us a message?
+            <br>
+            <textarea id="messagebox" name="message" rows="4" cols="50"></textarea>
+        </label>
+        <br>
+        <label for="email">Enter your Email Address</label>
+        <br>
+        <input type="email" name="email" id="email">
+        <br>
+        <label for="phone">Enter your Phone Number</label>
+        <br>
+        <input type="tel" name="phone" id="phone">
+        <br>
+        <input type="submit" value="Order Now">
+
+    </fieldset>
+</form>
+
+</body>
+</html>
