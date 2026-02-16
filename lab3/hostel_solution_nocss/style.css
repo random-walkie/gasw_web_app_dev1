@@ -7,6 +7,7 @@ nav ul {
     padding: 0;
     /* any content that overflows the ul is hidden */
     overflow: hidden;
+    border-radius: 0.5rem;
 }
 
 nav li {
@@ -24,7 +25,6 @@ nav li a {
     text-align: center;
     text-decoration: none;
     font-size: 1.2em;
-
 }
 
 nav li a.active {
@@ -57,11 +57,12 @@ h1, h2, h3 {
 }
 
 .main_container {
-    max-width: 75%;
+    max-width: 70%;
     margin: auto;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 0.5rem;
+    border: 1px solid #ccc;
 }
 
 /* Header, footer styling */
@@ -69,6 +70,7 @@ h1, h2, h3 {
     width: 100%;
     height: auto;
     border: 1px #cccccc solid;
+    border-radius: 10px;
 }
 
 header, footer {
@@ -91,10 +93,12 @@ figure {
     margin-left: auto;
     border: 1px #cccccc solid;
     padding: 4px;
+    border-radius: 10px;
 }
 
 figcaption {
     text-align: center;
+    font-style: italic;
 }
 
 #prices {
