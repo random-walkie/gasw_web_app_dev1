@@ -154,4 +154,23 @@ table td:hover, table th:hover {
 fieldset {
     background-color: gainsboro;
     padding: 20px;
+    border-radius: 10px;
+    margin-top: 1em;
+}
+
+fieldset legend {
+    background-color: beige;
+    padding: 0.5em;
+    box-shadow: 0.1em 0.1em gray;
+}
+
+input[type=submit] {
+    background-color: #4dabfa;
+    color: #ffffff;
+    box-shadow: 0.1em 0.1em #575d5d;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    width: 100%;
+    margin-top: 1em;
 }
