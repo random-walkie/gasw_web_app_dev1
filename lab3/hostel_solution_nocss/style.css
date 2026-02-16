@@ -46,3 +46,19 @@ h1, h2, h3 {
     font-family: Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
 }
 
+/* Header styling */
+.img_banner {
+    width: 100%;
+    height: auto;
+}
+
+/* Main content styling*/
+figure {
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+figcaption {
+    text-align: center;
+}
