@@ -11,13 +11,82 @@
     <a href=index.html><img class="img_banner" src="images/banner.jpg" title="Homepage" alt="banner image"></a>
     <nav>
         <ul>
-            <li><a class="active" href="index.html">Homepage</a></li>
+            <li><a href="index.html">Homepage</a></li>
             <li><a href="facilities.html">Facilities</a></li>
             <li><a href="cafe.html">Cafe</a></li>
-            <li><a href="booking.html">Booking</a></li>
+            <li><a class="active" href="booking.html">Booking</a></li>
         </ul>
     </nav>
 </header>
+
+<main>
+    <div class="main_container">
+        <form action="booking.php" method="post">
+            <fieldset>
+                <legend>Personal Details</legend>
+                <label for="first_name">First Name:</label>
+                <input type="text" name="name" id="first_name" required>
+                <br>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="surname" id="last_name" required>
+                <br>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+                <br>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" name="phone" id="phone" required>
+                <br>
+
+                <label for="street">Street:</label>
+                <input type="text" name="street" id="street" required>
+                <br>
+
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city" required>
+                <br>
+
+                <label for="postcode">Postcode:</label>
+                <input type="text" name="postcode" id="postcode" required>
+                <br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Booking Details</legend>
+                <label for="room">Room Type</label>
+                <select name="room" id="room" required>
+                    <option value="dormitory">Dormitory</option>
+                    <option value="group_room">Group Room</option>
+                    <option value="single">Single Room</option>
+                    <option value="double">Double Room</option>
+                </select>
+                <br>
+
+                <label for="checkin">Check-in Date:</label>
+                <input type="date" name="checkin" id="checkin" required>
+                <br>
+
+                <label for="checkout">Check-out Date:</label>
+                <input type="date" name="checkout" id="checkout" required>
+                <br>
+
+                <label for="checkin_time">Check-in Time:</label>
+                <input type="time" name="checkin_time" id="checkin_time" required min="15:00" max="21:00">
+                <br>
+
+                <label for="special_requests">Special Requests:</label>
+                <textarea name="special_requests" id="special_requests"></textarea>
+
+                <br>
+
+                <input type="submit" value="Book Now">
+            </fieldset>
+        </form>
+    </div>
+</main>
+
 <footer>
     <hr>
     <span id="copyright">

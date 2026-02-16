@@ -150,3 +150,8 @@ table td:hover, table th:hover {
 .menu {
     display: grid;
 }
+
+fieldset {
+    background-color: gainsboro;
+    padding: 20px;
+}
