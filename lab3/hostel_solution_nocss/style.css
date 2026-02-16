@@ -84,6 +84,10 @@ header, footer {
     text-align: center;
 }
 
+footer {
+    color: #ffffff;
+}
+
 header > h1 {
     font-family: custom, sans-serif;
     font-size: 5em;
