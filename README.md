@@ -23,3 +23,15 @@ Lab 2 covers fundamental HTML elements:
 
 - `/lab1` - Contains basic HTML examples
 - `/lab2` - Contains common HTML elements examples
+- `/lab3` - Contains CSS styling and layout examples
+
+## Lab 3 - Introduction to CSS
+
+Lab 3 introduces Cascading Style Sheets (CSS) for styling web pages:
+
+- Selection using element, class, and ID selectors
+- Grouping selectors for efficient styling
+- Box-model properties (margin, padding, borders, rounded corners)
+- List differentiation and custom list styles
+- Integration of online fonts (e.g., Google Fonts)
+- Site-wide background colors and basic layout using `<div>` elements
