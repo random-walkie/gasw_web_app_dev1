@@ -30,15 +30,15 @@ table > thead {
     text-decoration: underline;
 }
 
-th, td {
+table th, table td {
     border-bottom: 1px solid black;
 }
 
-tr:hover {
+table tr:hover {
     background-color: #add8e6;
 }
 
-td:hover {
+table td:hover {
     font-weight: bold;
 }
 
