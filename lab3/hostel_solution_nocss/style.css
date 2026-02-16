@@ -28,29 +28,38 @@ nav li a {
 }
 
 nav li a.active {
-    background-color: #183d20;
-    color: white;
+    background-color: #e78416;
+    color: #ffffff;
 }
 
 nav li a:hover {
-    background-color: #0e812b;
-    color: white;
+    background-color: #eab76a;
+    color: #ffffff;
 }
 
 /* Body styling */
 body {
     font-family: Quicksand, Barlow, sans-serif;
-    background-color: #f4f4f4;;
+    background-color: #8bd1ff;
 }
 
 h1, h2, h3 {
     font-family: Quicksand, Barlow, sans-serif;
 }
 
+.main_container {
+    max-width: 75%;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 0.5rem;
+}
+
 /* Header, footer styling */
 .img_banner {
     width: 100%;
     height: auto;
+    border: 1px #cccccc solid;
 }
 
 header, footer {
@@ -58,13 +67,32 @@ header, footer {
     text-align: center;
 }
 
+header > h1 {
+    font-size: 3em;
+    background-color: #dff6fd;
+    border-radius: 0.5rem;
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
 /* Main content styling*/
 figure {
     display: table;
     margin-right: auto;
     margin-left: auto;
+    border: 1px #cccccc solid;
+    padding: 4px;
 }
 
 figcaption {
     text-align: center;
+}
+
+#prices {
+    padding: 20px;
+    font-weight: bold;
+}
+
+#content {
+    padding: 20px;
 }
