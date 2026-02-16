@@ -37,6 +37,15 @@ nav li a:hover {
     color: #ffffff;
 }
 
+#menu ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+dt {
+    font-weight: bold;
+}
+
 /* Body styling */
 body {
     font-family: Quicksand, Barlow, sans-serif;
