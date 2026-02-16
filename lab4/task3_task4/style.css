@@ -131,12 +131,18 @@ table th, table td {
     margin: 3px;
 }
 
+table thead {
+    font-size: 1.2em;
+}
+
 table th {
     background-color: #b6b2b2;
-    color: #ffffff;
-    font-weight: bold;
 }
 
 table tr:nth-child(even) {
     background-color: #b4e8ff;
+}
+
+table td:hover, table th:hover {
+    background-color: #e78416;
 }
