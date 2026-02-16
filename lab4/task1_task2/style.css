@@ -25,3 +25,27 @@ legend {
     padding: 0.5em;
     box-shadow: 0.1em 0.1em gray;
 }
+
+table > thead {
+    text-decoration: underline;
+}
+
+th, td {
+    border-bottom: 1px solid black;
+}
+
+tr:hover {
+    background-color: #add8e6;
+}
+
+td:hover {
+    font-weight: bold;
+}
+
+.honours_cols {
+    background-color: #d8d8f3;
+}
+
+.marks_cols {
+    background-color: #d8f3dc;
+}
