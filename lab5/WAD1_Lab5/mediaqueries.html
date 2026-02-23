@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lecture 5</title>
+    <style>
+        div {
+            font-weight: bolder;
+            font-size: 4rem;
+        }
+
+        .blueDiv {
+            background-color: lightblue;
+        }
+
+        .greendiv {
+            height: 300px;
+            width: 300px;
+            background-color: greenyellow;
+        }
+
+        .purplediv {
+            background-color: pink;
+            height: 400px;
+        }
+
+        .salmondiv {
+            background-color: lightsalmon;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .img {
+                float: left;
+            }
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            .img {
+                float: left;
+                width: 50%
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .img {
+                width: 100%
+            }
+
+            div {
+                font-size: 2rem;
+            }
+
+            .flexContainer {
+                flex-direction: column;
+            }
+
+        }
+
+        /* NAVBAR CSS*/
+        .flexContainer {
+            display: flex;
+            padding: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .navitem {
+            border: 1px solid red;
+            margin: 1px
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <div class="blueDiv">HEADER</div>
+    <div class="salmondiv nav flexContainer">
+        <div class="navitem">Link1</div>
+        <div class="navitem">Link2</div>
+        <div class="navitem">Link3</div>
+    </div>
+
+
+    <div class="purplediv">
+        <div class="greendiv img">IMG</div>
+        TEXT
+    </div>
+    <div class="salmondiv">FOOTER</div>
+</main>
+
+</body>
+
+</html>
