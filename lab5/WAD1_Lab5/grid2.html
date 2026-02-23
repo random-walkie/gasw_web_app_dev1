@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .gridcontainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 5em 10em 5em;
+            grid-auto-rows: 5em;
+        }
+
+        div {
+            text-align: center;
+            font-weight: bolder;
+            font-size: 90px;
+        }
+
+        .blueDiv {
+            border: 3px solid darkblue;
+            background-color: lightblue;
+        }
+
+        .greendiv {
+            border: 3px solid green;
+            background-color: greenyellow;
+        }
+
+        .purplediv {
+            border: 3px solid purple;
+            background-color: pink;
+        }
+
+        .salmondiv {
+            border: 3px solid salmon;
+            background-color: lightsalmon;
+
+        }
+
+        .header {
+            grid-row: 1;
+            /* span all columns */
+            grid-column: 1 / -1;
+        }
+
+        .sidebar {
+            grid-column: 1/ span 1;
+            grid-row: 2/ span 3
+        }
+
+        .content {
+            grid-column: 2/span 1;
+        }
+
+        .footer {
+            grid-row: -1;
+            /* span all columns */
+            grid-column: 1 / -1;
+        }
+
+        .sidebar {
+            grid-column: 1/ span 1;
+            grid-row: 2/ span 3
+        }
+
+    </style>
+    <title>Grid 2</title>
+</head>
+
+<body>
+<section class="gridcontainer">
+    <div class="blueDiv header"> HEADER</div>
+    <div class="greendiv sidebar"> Sidebar</div>
+    <div class="purplediv content"> 3</div>
+    <div class="salmondiv content"> 4</div>
+    <div class="greendiv footer"> Footer</div>
+</section>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .gridcontainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 5em;
+            grid-auto-rows: 10em;
+        }
+
+        div {
+            text-align: center;
+            font-weight: bolder;
+            font-size: 90px;
+        }
+
+        .blueDiv {
+            border: 3px solid darkblue;
+            background-color: lightblue;
+        }
+
+        .greendiv {
+            border: 3px solid green;
+            background-color: greenyellow;
+        }
+
+        .purplediv {
+            border: 3px solid purple;
+            background-color: pink;
+        }
+
+        .salmondiv {
+            border: 3px solid salmon;
+            background-color: lightsalmon;
+
+        }
+
+        .item1 {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+        }
+
+        .item2 {
+            grid-column: 1 / span 3;
+        }
+
+    </style>
+    <title>Grid 1</title>
+</head>
+
+<body>
+<section class="gridcontainer">
+    <div class="blueDiv item1"> 1</div>
+    <div class="greendiv"> 2</div>
+    <div class="purplediv"> 3</div>
+    <div class="salmondiv item2"> 4</div>
+    <div class="blueDiv"> 5</div>
+    <div class="greendiv"> 6</div>
+</section>
+</body>
+
+</html>
