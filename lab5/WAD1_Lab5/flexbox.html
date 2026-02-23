@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .flexContainer {
+            background-color: gray;
+            padding: 10px;
+            flex-wrap: wrap;
+            display: flex;
+        }
+
+        div {
+            text-align: center;
+            font-weight: bolder;
+            font-size: 90px;
+        }
+
+        .blueDiv {
+            border: 3px solid darkblue;
+            background-color: lightblue;
+            flex-grow: 2;
+            flex-shrink: 1;
+            height: 100px;
+            width: 100px;
+        }
+
+        .greendiv {
+            border: 3px solid green;
+            background-color: greenyellow;
+            height: 100px;
+            width: 100px;
+        }
+
+        .purplediv {
+            border: 3px solid purple;
+            background-color: pink;
+            height: 100px;
+            width: 100px;
+        }
+
+        .salmondiv {
+            border: 3px solid salmon;
+            background-color: lightsalmon;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <title>Flexbox</title>
+</head>
+<body>
+<article class="flexContainer">
+    <div class="blueDiv"> 1</div>
+    <div class="greendiv"> 2</div>
+    <div class="purplediv"> 3</div>
+    <div class="salmondiv"> 4</div>
+    <div class="blueDiv"> 5</div>
+    <div class="greendiv"> 6</div>
+</article>
+</body>
+</html>
