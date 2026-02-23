@@ -1,0 +1,50 @@
+.navflex {
+    background-color: #183C28;
+    width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.navflex a {
+    color: #fefee3ff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.8em 0.5em;
+    display: inline-block;
+}
+
+/* create a flexbox */
+/* this makes all the items that are enclosed by the element */
+/* with the class navflex flex-items */
+.navflex ul {
+    display: flex;
+    /* allow for putting items into a new row if there is not sufficient space */
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    /* removes the list item indicator (dot) */
+    list-style: none;
+}
+
+/* use the space in the navbar more efficiently */
+.navflex li {
+    flex: 3;
+    text-align: center;
+}
+
+/* media query which is applied once a users screen is less than 480px wide. */
+@media screen and (max-width: 480px) {
+    /* change the flex direction to the column dimension */
+    .navflex ul {
+        flex-direction: column;
+    }
+
+    .navflex li {
+        text-align: left;
+    }
+
+    /* resize the header image to fit the mobile layout */
+    header img {
+        width: 100%;
+    }
+}
+
