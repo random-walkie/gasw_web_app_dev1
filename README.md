@@ -24,6 +24,8 @@ Lab 2 covers fundamental HTML elements:
 - `/lab1` - Contains basic HTML examples
 - `/lab2` - Contains common HTML elements examples
 - `/lab3` - Contains CSS styling and layout examples
+- `/lab4` - Contains advanced forms and multi-page site structure
+- `/lab5` - Contains CSS layout techniques (Flexbox, Grid) and responsive design
 
 ## Lab 3 - Introduction to CSS
 
@@ -35,3 +37,23 @@ Lab 3 introduces Cascading Style Sheets (CSS) for styling web pages:
 - List differentiation and custom list styles
 - Integration of online fonts (e.g., Google Fonts)
 - Site-wide background colors and basic layout using `<div>` elements
+
+## Lab 4 - Advanced HTML Forms and Tables
+
+Lab 4 focuses on complex HTML structures for data entry and presentation:
+
+- Advanced form elements: `fieldset`, `legend`, `datalist`
+- HTML5 input types: `time`, `number`, `email`, `tel`, `date`
+- Form validation using `required`, `min`, `max` attributes
+- Complex table structures using `colgroup`, `thead`, `tbody`, `rowspan`, and `colspan`
+- Creation of a multi-page hostel booking website
+
+## Lab 5 - Modern CSS Layout and Responsive Web Design
+
+Lab 5 covers advanced CSS layout techniques and making websites mobile-friendly:
+
+- CSS Floats for text wrapping and simple layouts
+- Flexbox for flexible and efficient item alignment
+- CSS Grid for complex two-dimensional layouts
+- Media Queries for creating responsive designs that adapt to different screen sizes
+- Implementing a responsive navigation menu with a mobile-first approach
