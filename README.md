@@ -26,6 +26,7 @@ Lab 2 covers fundamental HTML elements:
 - `/lab3` - Contains CSS styling and layout examples
 - `/lab4` - Contains advanced forms and multi-page site structure
 - `/lab5` - Contains CSS layout techniques (Flexbox, Grid) and responsive design
+- `/lab6` - Contains JavaScript basics and compound interest calculator refactoring
 
 ## Lab 3 - Introduction to CSS
 
@@ -57,3 +58,10 @@ Lab 5 covers advanced CSS layout techniques and making websites mobile-friendly:
 - CSS Grid for complex two-dimensional layouts
 - Media Queries for creating responsive designs that adapt to different screen sizes
 - Implementing a responsive navigation menu with a mobile-first approach
+
+## Lab 6 - Introduction to JavaScript
+
+Lab 6 introduces JavaScript programming:
+
+- Basic JavaScript syntax, functions, and control structures
+- Problem-solving with loops and mathematical operations
