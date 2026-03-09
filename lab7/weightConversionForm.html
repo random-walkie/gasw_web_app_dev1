@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model Form</title>
+    <script defer src="weightConversionForm.js"></script>
+</head>
+
+<body>
+<form id="weightConversionForm" action="#">
+    <label for="weightValue">Weight Value</label>
+    <input id="weightValue" type="number">
+    <input type="radio" name="weightRadioBtn" value="kilo" id="kiloBtn" checked>
+    <label for="kiloBtn">Kilo</label>
+    <input type="radio" name="weightRadioBtn" value="lbs" id="lbsBtn">
+    <label for="lbsBtn">Lbs</label>
+    <input type="radio" name="weightRadioBtn" value="stone" id="stoneBtn">
+    <label for="stoneBtn">Stone</label>
+    <input type="radio" name="weightRadioBtn" value="gram" id="gramBtn">
+    <label for="gramBtn">Gram</label>
+    <br>
+    <input type="submit" value="Convert Weights">
+</form>
+
+<div id="result">
+</div>
+
+
+</body>
+
+</html>
