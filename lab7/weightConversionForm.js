@@ -3,8 +3,7 @@ let weightVal = document.getElementById("weightValue");
 
 let form = document.getElementById("weightConversionForm");
 form.addEventListener("submit", weightConversionUpdate);
-
-//TODO 3: Add an event listener for the input text field that runs the weightConversionUpdate function on change (user entering any character)
+form.addEventListener("change", weightConversionUpdate);
 
 // Helper Functions (Make use of them for your unit conversions)
 function convertKiloToLbs(kilo) {
@@ -36,7 +35,7 @@ function getCheckedValue(radioBtnName) {
     let radioBtns = document.getElementsByName(radioBtnName);
     for (let i = 0; i < radioBtns.length; i++) {
         // check if the button has been selected
-        if (radioBtns[i].checked == true) {
+        if (radioBtns[i].checked === true) {
             return radioBtns[i].value;
         }
     }
@@ -52,36 +51,64 @@ function weightConversionUpdate(evt) {
     let value = document.getElementById("weightValue").value;
     let unit = getCheckedValue("weightRadioBtn");
     let result = document.getElementById("result");
-    // TODO 2: ensure that results are not appended (added on) when the user clicks the submit button, but rather replaced
-
+    result.innerHTML = "";
 
     // define the variables to be used in the switch statement
     let lbsVal;
     let stoneVal;
     let kiloVal;
+    let gramsVal;
     let lbsParagraph;
     let stoneParagraph;
     let kiloParagraph;
+    let gramsParagraph;
 
 
     switch (unit) {
         case "kilo":
             lbsVal = convertKiloToLbs(value);
             stoneVal = convertKiloToStone(value);
+            gramsVal = convertKiloToGrams(value);
             lbsParagraph = createResultParapgraph(unit, "LBS", value, lbsVal);
             stoneParagraph = createResultParapgraph(unit, "Stone", value, stoneVal);
+            gramsParagraph = createResultParapgraph(unit, "Grams", value, gramsVal);
 
             //add the results to the result element
             result.appendChild(lbsParagraph);
             result.appendChild(stoneParagraph);
+            result.appendChild(gramsParagraph);
 
             break;
 
+        case "lbs":
+            kiloVal = convertLbsToKilo(value);
+            stoneVal = convertStoneToKilo(value);
+            kiloParagraph = createResultParapgraph(unit, "Kilo", value, kiloVal);
+            stoneParagraph = createResultParapgraph(unit, "Stone", value, stoneVal);
 
-        // TODO 1: add switch cases for lbs or stone and don't forget to include a break-statement as well
+            result.appendChild(kiloParagraph);
+            result.appendChild(stoneParagraph);
 
+            break;
 
-        // TODO 4: add a way to converts the weights into grams
+        case "stone":
+            kiloVal = convertStoneToKilo(value);
+            lbsVal = convertKiloToLbs(value);
+            kiloParagraph = createResultParapgraph(unit, "Kilo", value, kiloVal);
+            lbsParagraph = createResultParapgraph(unit, "LBS", value, lbsVal);
+
+            result.appendChild(kiloParagraph);
+            result.appendChild(lbsParagraph);
+
+            break;
+
+        case "gram":
+            kiloVal = convertGramsToKilo(value);
+            kiloParagraph = createResultParapgraph(unit, "Kilo", value, kiloVal);
+
+            result.appendChild(kiloParagraph);
+
+            break;
     }
 }
 
