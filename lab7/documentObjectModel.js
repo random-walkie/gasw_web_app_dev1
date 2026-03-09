@@ -33,10 +33,34 @@ let newsContent = document.getElementsByClassName("news_content")[0];
 
 let colSymbol = document.querySelector(".col_symbol");
 
+// Task 2
+
+// Select last paragraph within the news article
+let lastNewsP = document.querySelector(".news_content p:last-child");
+console.log(lastNewsP.innerText);
+console.log(lastNewsP.innerHTML);
+// remove the content of the lastNewsP element
+lastNewsP.innerHTML = "";
+// create the strong element
+let strong = document.createElement("strong");
+// fill the strong element with text
+strong.innerHTML = "Updated";
+// create the remaining text node for the lastNewsP element
+let text = document.createTextNode(" text for the news article");
+// append the strong element to the (now empty) lastNewsP element
+lastNewsP.appendChild(strong);
+// append the text node to the lastNewsP element
+lastNewsP.appendChild(text);
+lastNewsP.remove();
+
+let newsHeader = document.querySelector(".news_header");
+newsHeader.classList.add("arial");
+console.log(newsHeader.classList);
+
 //Finish your task3 here
 
 
-let newsHeader = document.getElementsByTagName("header")[0];
+// let newsHeader = document.getElementsByTagName("header")[0];
 
 
 function collapseNews() {
