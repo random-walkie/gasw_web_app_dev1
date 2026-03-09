@@ -57,13 +57,14 @@ let newsHeader = document.querySelector(".news_header");
 newsHeader.classList.add("arial");
 console.log(newsHeader.classList);
 
-//Finish your task3 here
-
-
-// let newsHeader = document.getElementsByTagName("header")[0];
-
+// Task 3
 
 function collapseNews() {
+    if (colSymbol.textContent === "-") {
+        colSymbol.textContent = "+";
+    } else {
+        colSymbol.textContent = "-";
+    }
 
     newsContent.classList.toggle("hidden");
 }
