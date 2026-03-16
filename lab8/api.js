@@ -8,7 +8,7 @@ function displayConstituencyShortName(shortName) {
 }
 function selectApiMethod(apiMethod, url) {
     let baseUrlConstituencies = "https://data.parliament.scot/api/constituencies";
-    var constituencyCode;
+    let constituencyCode;
     if (apiMethod === 'fetch') {
         console.log('API call using fetch');
         fetch(url)
