@@ -27,6 +27,7 @@ Lab 2 covers fundamental HTML elements:
 - `/lab4` - Contains advanced forms and multi-page site structure
 - `/lab5` - Contains CSS layout techniques (Flexbox, Grid) and responsive design
 - `/lab6` - Contains JavaScript basics and compound interest calculator refactoring
+- `/lab7` - Contains DOM manipulation and event handling examples
 
 ## Lab 3 - Introduction to CSS
 
@@ -65,3 +66,16 @@ Lab 6 introduces JavaScript programming:
 
 - Basic JavaScript syntax, functions, and control structures
 - Problem-solving with loops and mathematical operations
+
+## Lab 7 - Document Object Model and Event Handling
+
+Lab 7 focuses on interacting with the web page using the Document Object Model (DOM) and handling user events:
+
+- Selecting DOM elements using `getElementById`, `getElementsByClassName`, `getElementsByTagName`, and `querySelector`/
+  `querySelectorAll`
+- Modifying element content (`innerHTML`, `innerText`, `textContent`) and manipulating CSS classes (`classList.add`,
+  `classList.toggle`)
+- Creating, configuring, and appending new DOM elements (`createElement`, `createTextNode`, `appendChild`)
+- Implementing event listeners for `click` and `submit` events
+- Using `event.preventDefault()` to manage form submission behaviour
+- Practical applications: collapsible content, weight conversion tool, and an interest rate calculator
