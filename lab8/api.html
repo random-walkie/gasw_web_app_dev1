@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="api.js"></script>
+    <link href="api.css" rel="stylesheet">
+
+    <!--jQuery used for OPTIONAL task-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+<!--Note that this is a minimal example, and that you will usually need to add more elements such as a header, footer, navigation bar, etc.-->
+
+<form id='postcodeForm'>
+    <fieldset class="card">
+        <h3>Postcode information retrieval</h3>
+        <label for='postcode'>Postcode</label>
+        <input id='postcode' type='text' placeholder='Enter a postcode' required>
+        <br>
+        <input type="submit" value='Submit Postcode'>
+    </fieldset>
+</form>
+
+
+<section id='result_section' class="card">
+    <h3>Results</h3>
+    <hr>
+    <p>Constituency: <span id="constituency"></span></p>
+    <p>Constituency Short Name: <span id="constituencyShort"></span></p>
+</section>
+
+</body>
+
+</html>
