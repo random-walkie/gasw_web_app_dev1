@@ -3,9 +3,17 @@
 function displayConstituency(data) {
     document.getElementById('result_section').style.display = 'block';
     document.getElementById('constituency').innerText = data.result.scottish_parliamentary_constituency;
+
+}
+
+function displayConstituencyShortName(shortName) {
+    document.getElementById('constituencyShort').innerText = shortName;
 }
 
 function selectApiMethod(apiMethod, url) {
+
+    let baseUrlConstituencies = "https://data.parliament.scot/api/constituencies";
+    var constituencyCode;
 
     if (apiMethod === 'fetch') {
         console.log('API call using fetch');
@@ -20,8 +28,20 @@ function selectApiMethod(apiMethod, url) {
             })
             .then(response => response.json())
             .then(data => {
-                displayConstituency(data)
+                displayConstituency(data);
+                constituencyCode = data.result.codes.scottish_parliamentary_constituency;
+                return fetch(baseUrlConstituencies);
+            })
+            .then(response => response.json())
+            .then((response) => {
+                for (let i = 0; i < response.length; i++) {
+                    if (response[i].ConstituencyCode === constituencyCode) {
+                        displayConstituencyShortName(response[i].ShortName);
+                        break;
+                    }
+                }
             });
+
 
     } else if (apiMethod === 'xhr') {
         console.log('API call using XMLHttpRequest');
@@ -35,6 +55,22 @@ function selectApiMethod(apiMethod, url) {
                 // The data is then turned into a JavaScript object which is much easier to access
                 let data = JSON.parse(this.responseText);
                 console.log(data);
+                displayConstituency(data);
+                constituencyCode = data.result.codes.scottish_parliamentary_constituency;
+                const xhr2 = new XMLHttpRequest();
+                xhr2.addEventListener("readystatechange", function () {
+                    if (this.readyState === 4 && this.status === 200) {
+                        let constituencies = JSON.parse(this.responseText);
+                        for (let i = 0; i < constituencies.length; i++) {
+                            if (constituencies[i].ConstituencyCode === constituencyCode) {
+                                displayConstituencyShortName(constituencies[i].ShortName);
+                                break;
+                            }
+                        }
+                    }
+                });
+                xhr2.open("GET", baseUrlConstituencies);
+                xhr2.send();
             } else if (this.readyState === 4 && this.status === 404) {
                 alert("Postcode not found");
             }
@@ -59,7 +95,7 @@ function postcodeApiCall(evt) {
     let url = baseUrl + postcode;
     console.log(url);
 
-    selectApiMethod('fetch', url);
+    selectApiMethod('xhr', url);
 
 }
 
