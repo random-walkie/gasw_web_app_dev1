@@ -18,12 +18,14 @@
                 <h1>Welcome to the Book Hub</h1>
             </div>
         </div>
-        <div class="topnav" id="myTopnav">
-            <a href="index.html">Homepage</a>
-            <a href="giftcard.html" class="active">Gift Cards</a>
+        <nav class="topnav" id="myTopnav" aria-label="Main navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="giftcard.html">Gift Cards</a>
             <a href="books.html">Book Library</a>
-            <a href="javascript:void(0);" class="icon" onclick="responsiveTopNavBar()">☰</a>
-        </div>
+            <a href="javascript:void(0);" class="icon" role="button"
+               aria-label="Toggle navigation menu" aria-expanded="false"
+               onclick="responsiveTopNavBar()">☰</a>
+        </nav>
     </header>
     <main></main>
     <footer>

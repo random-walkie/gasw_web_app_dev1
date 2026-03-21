@@ -19,64 +19,67 @@
                 <h1>Welcome to the Book Hub</h1>
             </div>
         </div>
-        <div class="topnav" id="myTopnav">
+        <nav class="topnav" id="myTopnav" aria-label="Main navigation">
             <a href="index.html" class="active">Home</a>
             <a href="giftcard.html">Gift Cards</a>
             <a href="books.html">Book Library</a>
-            <a href="javascript:void(0);" class="icon" onclick="responsiveTopNavBar()">☰</a>
-        </div>
+            <a href="javascript:void(0);" class="icon" role="button"
+               aria-label="Toggle navigation menu" aria-expanded="false"
+               onclick="responsiveTopNavBar()">☰</a>
+        </nav>
     </header>
     <div class="content-row">
-    <main>
-        <section id="about">
-            <h2>Your Home for Books & More</h2>
-            <p><b>The Book Hub </b> is your one-stop destination for book lovers
-                — a place to discover, explore, and share the joy of reading.</p>
-            <hr>
-        </section>
+        <main>
+            <section id="about">
+                <h2>Your Home for Books & More</h2>
+                <p><b>The Book Hub </b> is your one-stop destination for book lovers
+                    — a place to discover, explore, and share the joy of reading.</p>
+                <hr>
+            </section>
 
-        <section id="features">
-            <br>
-            <h2>What Can You Do?</h2>
-            <div class="cards">
-                <article class="card">
-                    <header>
-                        <h3>Buy Our Gift Cards</h3>
-                    </header>
+            <section id="features">
+                <br>
+                <h2>What Can You Do?</h2>
+                <div class="cards">
+                    <article class="card">
+                        <header>
+                            <h3>Buy Our Gift Cards</h3>
+                        </header>
 
-                    <a href="giftcard.html"> <img src="static/img/giftcard.jpg" alt="A hand holding a black card with the
+                        <a href="giftcard.html"> <img src="static/img/giftcard.jpg" alt="A hand holding a black card with the
                 word BUY cut out in gold lettering" width="640" height="771"/></a>
-                    <div class="content">
-                        <p> Give the gift of reading with a Book Hub Gift Card – the perfect present for any book
-                            lover. </p>
-                        <br>
-                        <p> Choose from a range of values and let your friends or family pick their next favourite
-                            read. </p>
-                    </div>
-                    <footer>Gift cards never expire and can be used across our full library collection.</footer>
-                </article>
+                        <div class="content">
+                            <p> Give the gift of reading with a Book Hub Gift Card – the perfect present for any book
+                                lover. </p>
+                            <br>
+                            <p> Choose from a range of values and let your friends or family pick their next favourite
+                                read. </p>
+                        </div>
+                        <footer>Gift cards never expire and can be used across our full library collection.</footer>
+                    </article>
 
-                <article class="card">
-                    <header>
-                        <h3>Browse the Book Library</h3>
-                    </header>
+                    <article class="card">
+                        <header>
+                            <h3>Browse the Book Library</h3>
+                        </header>
 
-                    <a href="books.html"><img src="static/img/catalogue.jpg" alt="A close-up of a vintage wooden library
+                        <a href="books.html"><img src="static/img/catalogue.jpg" alt="A close-up of a vintage wooden library
                 card catalogue, with rows of dark drawers fitted with brass knobs and small label holders,
                 stretching across the frame." width="640" height="427"/></a>
-                    <div class="content">
-                        <p> Explore our ever-growing Book Library and find your next great read. </p>
-                        <br>
-                        <p> Browse titles across a wide range of genres – from timeless classics to contemporary fiction
-                            –
-                            all neatly organised and easy to search. </p>
-                    </div>
-                    <footer>Our Book Library is constantly growing and updated with new titles.</footer>
-                </article>
-            </div>
-        </section>
+                        <div class="content">
+                            <p> Explore our ever-growing Book Library and find your next great read. </p>
+                            <br>
+                            <p> Browse titles across a wide range of genres – from timeless classics to contemporary
+                                fiction
+                                –
+                                all neatly organised and easy to search. </p>
+                        </div>
+                        <footer>Our Book Library is constantly growing and updated with new titles.</footer>
+                    </article>
+                </div>
+            </section>
 
-    </main>
+        </main>
         <aside>
             <section>
                 <p>Our extensive library is powered by OpenLibrary.</p>
