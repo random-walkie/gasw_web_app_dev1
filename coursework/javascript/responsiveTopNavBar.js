@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /**
  * This function toggles the responsive navigation menu for mobile devices.
