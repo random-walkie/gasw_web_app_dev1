@@ -80,6 +80,18 @@ hr {
     min-width: 0;
 }
 
+#gift-card-calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#gift-card-calculator form {
+    width: 100%;
+    max-width: 500px;
+}
+
 /* === 5. Mobile Nav (Hamburger) === */
 .topnav {
     display: flex;
@@ -318,7 +330,63 @@ aside p:last-child {
     padding: 0.5rem;
 }
 
-/* === 9. Footer === */
+/* === 9. Forms === */
+fieldset {
+    background-color: var(--champagne-mist);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--dark-coffee-2);
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.75rem 1rem;
+}
+
+fieldset legend,
+fieldset p,
+fieldset label:has(input[type="radio"]) {
+    grid-column: 1 / -1;
+}
+
+fieldset legend {
+    background-color: var(--cinnamon-wood);
+    padding: 0.5em;
+    box-shadow: 0.1em 0.1em gray;
+    font-weight: bold;
+}
+
+fieldset input:not([type="radio"]):not([type="checkbox"]),
+fieldset select {
+    width: 100%;
+}
+
+fieldset input[type="checkbox"] {
+    justify-self: start;
+}
+
+input[type=submit] {
+    background-color: var(--cinnamon-wood);
+    box-shadow: 0.1em 0.1em var(--dark-coffee);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type=submit]:hover,
+input[type=submit]:focus {
+    background-color: var(--burnt-peach);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--dark-coffee-2);
+}
+
+/* === 10. Footer === */
 .container > footer {
     background-color: var(--dark-coffee-2);
     color: var(--champagne-mist);

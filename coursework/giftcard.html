@@ -9,6 +9,7 @@
     <meta name="author" content="Marta Nabais">
     <meta name="keywords" content="HTML, CSS, JavaScript, Web Development, Gift and Book Hub">
     <script defer src="javascript/responsiveTopNavBar.js"></script>
+    <script defer src="javascript/dynamicDeliveryGiftCardFields.js"></script>
 </head>
 <body>
 <div class="container">
@@ -27,7 +28,40 @@
                onclick="responsiveTopNavBar()">☰</a>
         </nav>
     </header>
-    <main></main>
+    <main>
+        <section id="gift-card-calculator">
+            <h2>Gift Card Calculator</h2>
+            <form id="giftCardForm" action="" method="post">
+                <fieldset>
+                    <legend>Gift Card Details</legend>
+                    <label for="value">Gift Card Value (in £, per unit):</label>
+                    <input type="number" id="value" name="value" required min="5" max="200" step="0.01"
+                           placeholder="e.g. 5">
+
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" required min="1" max="20" step="1"
+                           placeholder="e.g. 1">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Delivery Method</legend>
+                    <label for="e-gift">
+                        <input type="radio" id="e-gift" name="deliveryMethod" value="e-gift" checked> e-gift (no post
+                        fee)
+                    </label>
+                    <label for="post">
+                        <input type="radio" id="post" name="deliveryMethod" value="post"> Physical (flat £3.00 post fee)
+                    </label>
+                </fieldset>
+                <!-- Dynamically create extra delivery options with dynamicDeliveryGiftCardFields.js -->
+                <div id="delivery-options"></div>
+                <!-- Dynamically create extra email field with dynamicGiftCardEmailField.js -->
+                <input type="submit" value="Submit" class="btn-calculate">
+            </form>
+            <!-- Dynamically display results after form submission with giftCardCalculator.js -->
+            <div id="result"></div>
+        </section>
+    </main>
     <footer>
         <nav>
             <a href="index.html">Home</a>
