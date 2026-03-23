@@ -46,16 +46,15 @@
                 <fieldset>
                     <legend>Delivery Method</legend>
                     <label for="e-gift">
-                        <input type="radio" id="e-gift" name="deliveryMethod" value="e-gift" checked> e-gift (no post
+                        <input type="radio" id="e-gift" name="deliveryMethod" value="e-gift" checked> E-gift (no post
                         fee)
                     </label>
                     <label for="post">
-                        <input type="radio" id="post" name="deliveryMethod" value="post"> Physical (flat £3.00 post fee)
+                        <input type="radio" id="post" name="deliveryMethod" value="post"> Post
                     </label>
                 </fieldset>
                 <!-- Dynamically create extra delivery options with dynamicDeliveryGiftCardFields.js -->
                 <div id="delivery-options"></div>
-                <!-- Dynamically create extra email field with dynamicGiftCardEmailField.js -->
                 <input type="submit" value="Submit">
             </form>
             <!-- Dynamically display results after form submission with giftCardCalculator.js -->

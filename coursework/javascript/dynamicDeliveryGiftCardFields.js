@@ -1,94 +1,81 @@
 "use strict";
 
 /**
- * Creates a labelled <select> element from a list of options.
- * @param {string} id - The id and name for the select element.
- * @param {string} labelText - The visible label text.
- * @param {Array<{value: string, text: string, disabled?: boolean}>} options
- * @returns {DocumentFragment} A fragment containing the label and select.
+ * Creates a select element with options for delivery speeds and appends it to the given fieldset.
+ * @param fieldset The fieldset to append the select element to
+ * @returns {HTMLFieldSetElement} The fieldset with the select element appended to it.
  */
-function createLabelledSelect(id, labelText, options) {
-    const fragment = document.createDocumentFragment();
-
+function createDeliverySpeedField(fieldset) {
     const label = document.createElement("label");
-    label.setAttribute("for", id);
-    label.textContent = labelText;
-    fragment.appendChild(label);
+    label.setAttribute("for", "deliverySpeed");
+    label.textContent = "Delivery Speed:";
+    fieldset.appendChild(label);
 
     const select = document.createElement("select");
-    select.id = id;
-    select.name = id;
+    select.id = "deliverySpeed";
+    select.name = "deliverySpeed";
     select.required = true;
+    fieldset.appendChild(select);
 
-    options.forEach(({value, text, disabled}) => {
-        const opt = document.createElement("option");
-        opt.value = value;
-        opt.textContent = text;
-        if (disabled) {
-            opt.disabled = true;
-            opt.selected = true;
-        }
-        select.appendChild(opt);
-    });
-
-    fragment.appendChild(select);
-    return fragment;
-}
-
-/**
- * Creates the delivery speed label and select element.
- * @returns {DocumentFragment}
- */
-function createDeliverySpeedField() {
-    return createLabelledSelect("deliverySpeed", "Delivery Speed:", [
+    const options = [
         {value: "", text: "Select a speed…", disabled: true},
         {value: "standard", text: "Standard (3–5 days)"},
         {value: "express", text: "Express (1–2 days)"},
         {value: "next-day", text: "Next Day"},
-    ]);
+    ];
+
+    options.forEach(option => {
+        const opt = document.createElement("option");
+        opt.value = option.value;
+        opt.textContent = option.text;
+        select.appendChild(opt);
+    });
+
+    fieldset.appendChild(select);
+    return fieldset;
 }
 
 /**
- * Creates a labelled <input> element for packaging checkbox.
- * @returns {DocumentFragment} A fragment containing the label and input.
+ * Creates a checkbox input field and appends it to the given fieldset.
+ * @param fieldset The fieldset to append the checkbox to
+ * @returns {HTMLFieldSetElement} The fieldset with the checkbox appended to it.
  */
-function createPackagingField() {
-    const fragment = document.createDocumentFragment();
-
+function createPackagingField(fieldset) {
     const label = document.createElement("label");
-    const id = "packaging";
-    label.setAttribute("for", id);
-    label.textContent = "Premium Gift box (+£2.50)";
-    fragment.appendChild(label);
+    label.setAttribute("for", "packaging");
+    label.textContent = "Premium Gift Box (+£2.50):";
+    fieldset.appendChild(label);
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.id = id;
-    checkbox.name = id;
-    checkbox.value = "gift-box";
-    checkbox.required = false;
-    fragment.appendChild(checkbox);
-    return fragment;
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.id = "packaging";
+    input.name = "packaging";
+    input.required = true;
+    fieldset.appendChild(input);
+    return fieldset;
 }
 
 /**
- * Creates a labelled <input> element for email address.
- * @returns {DocumentFragment} A fragment containing the label and input.
+ * Creates an email input field and appends it to the given fieldset.
+ * @param fieldset The fieldset to append the email field to
+ * @returns {HTMLFieldSetElement} The fieldset with the email field appended to it.
  */
-function createEmailField() {
-    const fragment = document.createDocumentFragment();
+function createEmailField(fieldset) {
     const label = document.createElement("label");
     label.setAttribute("for", "email");
     label.textContent = "Email Address:";
-    fragment.appendChild(label);
+    fieldset.appendChild(label);
 
     const input = document.createElement("input");
     input.type = "email";
     input.id = "email";
     input.name = "email";
+    input.placeholder = "Enter your email address";
+    input.pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
+    input.autocomplete = "email";
     input.required = true;
-    fragment.appendChild(input);
-    return fragment;
+    fieldset.appendChild(input);
+    return fieldset;
 }
 
 /**
@@ -96,36 +83,41 @@ function createEmailField() {
  * Called whenever a delivery method radio button changes.
  * When "post" is selected: injects a fieldset with delivery speed select and packaging checkbox.
  * When "e-gift" is selected: injects a fieldset with email address input.
+ * @returns {void}
  */
-function renderDeliveryOptions() {
-    const selected = document.querySelector("input[name='deliveryMethod']:checked");
-    const container = document.getElementById("delivery-options");
+function showDeliveryFields() {
+    let selected = document.querySelector("input[name='deliveryMethod']:checked");
+    let container = document.getElementById("delivery-options");
 
-    container.innerHTML = "";
+    container.innerHTML = ""; // clear old fields
 
-    const fieldset = document.createElement("fieldset");
+    let fieldset = document.createElement("fieldset");
+    container.appendChild(fieldset);
+    let legend = document.createElement("legend");
 
-    const legend = document.createElement("legend");
+    if (selected.value === "e-gift") {
 
-    if (!selected || selected.value !== "post") {
-        legend.textContent = "E-Gift Card Delivery Address";
+        legend.textContent = "E-Gift Card Address";
         fieldset.appendChild(legend);
+        createEmailField(fieldset);
 
-        fieldset.appendChild(createEmailField());
+    } else if (selected.value === "post") {
 
-        container.appendChild(fieldset);
-    } else {
-        legend.textContent = "Physical Delivery Options";
+        legend.textContent = "Delivery Options";
         fieldset.appendChild(legend);
-
-        fieldset.appendChild(createDeliverySpeedField());
-        fieldset.appendChild(createPackagingField());
-
-        container.appendChild(fieldset);
+        createDeliverySpeedField(fieldset);
+        createPackagingField(fieldset);
     }
 }
 
+// Call the function when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("input[name='deliveryMethod']")
-        .forEach(radio => radio.addEventListener("change", renderDeliveryOptions));
+    // Get radio buttons and listen for changes
+    const radios = document.querySelectorAll("input[name='deliveryMethod']");
+    radios.forEach(function (radio) {
+        radio.addEventListener("change", showDeliveryFields);
+    });
+
+    // Initial render of delivery options
+    showDeliveryFields();
 });
