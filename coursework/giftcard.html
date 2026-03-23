@@ -10,6 +10,7 @@
     <meta name="keywords" content="HTML, CSS, JavaScript, Web Development, Gift and Book Hub">
     <script defer src="javascript/responsiveTopNavBar.js"></script>
     <script defer src="javascript/dynamicDeliveryGiftCardFields.js"></script>
+    <script defer src="javascript/giftCardCalculator.js"></script>
 </head>
 <body>
 <div class="container">
@@ -34,8 +35,8 @@
             <form id="giftCardForm" action="" method="post">
                 <fieldset>
                     <legend>Gift Card Details</legend>
-                    <label for="value">Gift Card Value (in £, per unit):</label>
-                    <input type="number" id="value" name="value" required min="5" max="200" step="0.01"
+                    <label for="giftCardValue">Gift Card Value (in £, per unit):</label>
+                    <input type="number" id="giftCardValue" name="giftCardValue" required min="5" max="200" step="0.01"
                            placeholder="e.g. 5">
 
                     <label for="quantity">Quantity:</label>
@@ -58,7 +59,7 @@
                 <input type="submit" value="Submit">
             </form>
             <!-- Dynamically display results after form submission with giftCardCalculator.js -->
-            <div id="result"></div>
+            <div id="gift-card-result"></div>
         </section>
     </main>
     <footer>

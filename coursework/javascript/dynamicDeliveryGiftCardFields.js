@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Creates a select element with options for delivery speeds and appends it to the given fieldset.
+ *
  * @param fieldset The fieldset to append the select element to
  * @returns {HTMLFieldSetElement} The fieldset with the select element appended to it.
  */
@@ -19,9 +19,9 @@ function createDeliverySpeedField(fieldset) {
 
     const options = [
         {value: "", text: "Select a speed…", disabled: true},
-        {value: "standard", text: "Standard (3–5 days)"},
-        {value: "express", text: "Express (1–2 days)"},
-        {value: "next-day", text: "Next Day"},
+        {value: "standard", text: "Standard (3–5 days) (+£3.00)"},
+        {value: "express", text: "Express (1–2 days) (+£5.00)"},
+        {value: "next-day", text: "Next Day (+£10.00)"},
     ];
 
     options.forEach(option => {
@@ -36,7 +36,7 @@ function createDeliverySpeedField(fieldset) {
 }
 
 /**
- * Creates a checkbox input field and appends it to the given fieldset.
+ *
  * @param fieldset The fieldset to append the checkbox to
  * @returns {HTMLFieldSetElement} The fieldset with the checkbox appended to it.
  */
@@ -50,13 +50,12 @@ function createPackagingField(fieldset) {
     input.type = "checkbox";
     input.id = "packaging";
     input.name = "packaging";
-    input.required = true;
     fieldset.appendChild(input);
     return fieldset;
 }
 
 /**
- * Creates an email input field and appends it to the given fieldset.
+ *
  * @param fieldset The fieldset to append the email field to
  * @returns {HTMLFieldSetElement} The fieldset with the email field appended to it.
  */
@@ -80,9 +79,6 @@ function createEmailField(fieldset) {
 
 /**
  * Renders the physical delivery options fieldset inside #delivery-options.
- * Called whenever a delivery method radio button changes.
- * When "post" is selected: injects a fieldset with delivery speed select and packaging checkbox.
- * When "e-gift" is selected: injects a fieldset with email address input.
  * @returns {void}
  */
 function showDeliveryFields() {
