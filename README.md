@@ -28,6 +28,7 @@ Lab 2 covers fundamental HTML elements:
 - `/lab5` - Contains CSS layout techniques (Flexbox, Grid) and responsive design
 - `/lab6` - Contains JavaScript basics and compound interest calculator refactoring
 - `/lab7` - Contains DOM manipulation and event handling examples
+- `/lab8` - Contains API integration, asynchronous JavaScript, and jQuery examples
 
 ## Lab 3 - Introduction to CSS
 
@@ -79,3 +80,15 @@ Lab 7 focuses on interacting with the web page using the Document Object Model (
 - Implementing event listeners for `click` and `submit` events
 - Using `event.preventDefault()` to manage form submission behaviour
 - Practical applications: collapsible content, weight conversion tool, and an interest rate calculator
+
+## Lab 8 - API Integration and Asynchronous JavaScript
+
+Lab 8 introduces working with external APIs and asynchronous JavaScript:
+
+- Fetch API using `.then()` promise chains for asynchronous operations
+- XMLHttpRequest for making API calls with `readyState` monitoring
+- Chaining multiple API requests (postcodes.io and data.parliament.scot)
+- Parsing JSON responses and handling API errors
+- Introduction to jQuery for DOM manipulation and event handling
+- Practical applications: Scottish postcode lookup with constituency retrieval using both Fetch and XMLHttpRequest
+  approaches
