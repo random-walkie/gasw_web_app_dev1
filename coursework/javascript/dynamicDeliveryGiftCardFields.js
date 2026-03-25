@@ -70,7 +70,6 @@ function createEmailField(fieldset) {
     input.id = "email";
     input.name = "email";
     input.placeholder = "Enter your email address";
-    input.pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
     input.autocomplete = "email";
     input.required = true;
     fieldset.appendChild(input);
