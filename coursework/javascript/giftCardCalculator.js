@@ -124,9 +124,27 @@ function showPaymentResults(evt) {
     result.innerHTML = "";
 
     const giftCardValue = parseFloat(document.getElementById("giftCardValue").value);
+    if (!isValidGiftCardValue(giftCardValue)) {
+        const errorParagraph = document.createElement("p");
+        errorParagraph.textContent = "Please enter a valid gift card value.";
+        result.appendChild(errorParagraph);
+        return;
+    }
     const quantity = parseInt(document.getElementById("quantity").value);
+    if (!isValidQuantity(quantity)) {
+        const errorParagraph = document.createElement("p");
+        errorParagraph.textContent = "Please enter a valid quantity.";
+        result.appendChild(errorParagraph);
+        return;
+    }
 
     const deliveryMethod = document.querySelector("input[name='deliveryMethod']:checked").value;
+    if (!isValidDeliveryMethod(deliveryMethod)) {
+        const errorParagraph = document.createElement("p");
+        errorParagraph.textContent = "Please select a valid delivery method.";
+        result.appendChild(errorParagraph);
+        return;
+    }
 
     let deliverySpeed = "";
     let premiumGiftBoxChecked = false;
@@ -134,6 +152,12 @@ function showPaymentResults(evt) {
 
     if (deliveryMethod === "post") {
         deliverySpeed = document.getElementById("deliverySpeed").value;
+        if (!isValidDeliverySpeed(deliverySpeed)) {
+            const errorParagraph = document.createElement("p");
+            errorParagraph.textContent = "Please select a valid delivery speed.";
+            result.appendChild(errorParagraph);
+            return;
+        }
         premiumGiftBoxChecked = document.getElementById("packaging").checked;
         addDeliveryParagraphs(result, deliverySpeed, premiumGiftBoxChecked);
     }
