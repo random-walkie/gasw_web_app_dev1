@@ -9,6 +9,7 @@
     <meta name="author" content="Marta Nabais">
     <meta name="keywords" content="HTML, CSS, JavaScript, Web Development, Gift and Book Hub">
     <script defer src="javascript/responsiveTopNavBar.js"></script>
+    <script defer src="javascript/openLibrarySearchController.js"></script>
 </head>
 <body>
 <div class="container">
@@ -27,7 +28,22 @@
                onclick="responsiveTopNavBar()">☰</a>
         </nav>
     </header>
-    <main></main>
+    <main>
+        <section id="book-library">
+            <h2>Book Library Search</h2>
+            <form id="bookSearchForm" action="" method="post">
+                <fieldset>
+                    <legend>Search for Books / Authors</legend>
+                    <label for="searchTerm">Please enter book title or author name:</label>
+                    <input type="text" id="searchTerm" name="searchTerm" required maxlength="50"
+                           placeholder="e.g. Lord of the Flies">
+                </fieldset>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+        <!-- Dynamically display results after form submission with openLibrarySearchController.js -->
+        <div id="book-search-result"></div>
+    </main>
     <footer>
         <nav>
             <a href="index.html">Home</a>
