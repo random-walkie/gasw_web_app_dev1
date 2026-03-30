@@ -126,14 +126,16 @@ function showPaymentResults(evt) {
     const giftCardValue = parseFloat(document.getElementById("giftCardValue").value);
     if (!isValidGiftCardValue(giftCardValue)) {
         const errorParagraph = document.createElement("p");
-        errorParagraph.textContent = "Please enter a valid gift card value.";
+        errorParagraph.textContent = "Enter a valid gift card value.";
+        errorParagraph.classList = "errorMessage";
         result.appendChild(errorParagraph);
         return;
     }
     const quantity = parseInt(document.getElementById("quantity").value);
     if (!isValidQuantity(quantity)) {
         const errorParagraph = document.createElement("p");
-        errorParagraph.textContent = "Please enter a valid quantity.";
+        errorParagraph.textContent = "Enter a valid quantity.";
+        errorParagraph.classList = "errorMessage";
         result.appendChild(errorParagraph);
         return;
     }
@@ -141,7 +143,8 @@ function showPaymentResults(evt) {
     const deliveryMethod = document.querySelector("input[name='deliveryMethod']:checked").value;
     if (!isValidDeliveryMethod(deliveryMethod)) {
         const errorParagraph = document.createElement("p");
-        errorParagraph.textContent = "Please select a valid delivery method.";
+        errorParagraph.textContent = "Select a valid delivery method.";
+        errorParagraph.classList = "errorMessage";
         result.appendChild(errorParagraph);
         return;
     }
@@ -154,7 +157,8 @@ function showPaymentResults(evt) {
         deliverySpeed = document.getElementById("deliverySpeed").value;
         if (!isValidDeliverySpeed(deliverySpeed)) {
             const errorParagraph = document.createElement("p");
-            errorParagraph.textContent = "Please select a valid delivery speed.";
+            errorParagraph.textContent = "Select a valid delivery speed.";
+            errorParagraph.classList = "errorMessage";
             result.appendChild(errorParagraph);
             return;
         }
@@ -170,7 +174,7 @@ function showPaymentResults(evt) {
 }
 
 // Capture the form submission event and call the showPaymentResults function
-const giftCardForm = document.getElementById("giftCardForm");
+const giftCardForm = document.getElementById("gift-card-form");
 giftCardForm.addEventListener("submit", showPaymentResults);
 
 

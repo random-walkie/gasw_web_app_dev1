@@ -6,7 +6,7 @@
  * @returns {void}
  */
 function responsiveTopNavBar() {
-    const x = document.getElementById("myTopnav");
+    const x = document.getElementById("my-top-nav");
     const icon = x.querySelector(".icon");
     const isExpanded = x.className !== "topnav";
 

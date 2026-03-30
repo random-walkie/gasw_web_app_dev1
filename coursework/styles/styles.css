@@ -387,6 +387,12 @@ input[type=submit]:focus {
     box-shadow: 0 0 0 3px var(--dark-coffee-2);
 }
 
+.errorMessage {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
 /* === 10. Gift Card Calculator === */
 #gift-card-result > p {
     font-size: 1.5rem;
