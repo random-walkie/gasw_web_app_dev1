@@ -46,6 +46,19 @@ function isValidBookSearchTerm(searchTerm) {
     return isNotEmpty && isAcceptableLength;
 }
 
+function isValidStartYear(inputStartYear, minYear) {
+    return !Number.isNaN(inputStartYear) && inputStartYear >= minYear && inputStartYear <= new Date().getFullYear();
+}
+
+function isValidEndYear(inputEndYear, minYear) {
+    return !Number.isNaN(inputEndYear) && inputEndYear >= minYear && inputEndYear <= new Date().getFullYear();
+}
+
+function isValidYearRange(inputStartYear, inputEndYear) {
+    return inputStartYear <= inputEndYear;
+}
+
+
 /**
  * @param targetElement The element to which the message will be appended.
  * @param message The message to be displayed.

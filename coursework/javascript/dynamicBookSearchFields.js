@@ -1,6 +1,6 @@
 "use strict";
 // Module variables
-const startYear = 1800;
+const startYear = 1901;
 const currentYear = new Date().getFullYear();
 const startYearString = startYear.toString();
 const currentYearString = currentYear.toString();
@@ -76,15 +76,16 @@ function applyFilters() {
     bookSearchResult.innerHTML = "";
 
     // Get the values of the filter inputs
-    const startYear = document.getElementById("startYear").valueAsNumber;
-    const endYear = document.getElementById("endYear").valueAsNumber;
+    const inputStartYear = document.getElementById("startYear").valueAsNumber;
+    const inputEndYear = document.getElementById("endYear").valueAsNumber;
 
     // Get the book search summary element
     const bookSearchSummary = document.getElementById("book-search-result-summary");
     // Check if the start year is greater than the end year
     // Display an error message if it is
-    if (startYear > endYear) {
-        displayMessage(bookSearchSummary, "Start year cannot be greater than end year.",
+    if (!isValidStartYear(inputStartYear, startYear) || !isValidEndYear(inputEndYear, startYear) ||
+        !isValidYearRange(inputStartYear, inputEndYear)) {
+        displayMessage(bookSearchSummary, "The date range is invalid. Please enter a valid start year and end year.",
             "errorMessage", true);
         return;
     }
@@ -92,7 +93,7 @@ function applyFilters() {
 
     // Apply the filtering to the currentResults.docs array
     const filteredResults = currentResults.docs.filter(book => {
-        if (!book.first_publish_year || book.first_publish_year < startYear || book.first_publish_year > endYear) {
+        if (!book.first_publish_year || book.first_publish_year < inputStartYear || book.first_publish_year > inputEndYear) {
             return false;
         }
         return !(onlyShowBooksWithCover && !book.cover_i);
