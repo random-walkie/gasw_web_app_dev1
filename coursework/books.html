@@ -10,8 +10,8 @@
     <meta name="author" content="Marta Nabais">
     <meta name="keywords" content="HTML, CSS, JavaScript, Web Development, Gift and Book Hub">
     <script defer src="javascript/responsiveTopNavBar.js"></script>
-    <script defer src="javascript/dynamicBookSearchFields.js"></script>
     <script defer src="javascript/utils.js"></script>
+    <script defer src="javascript/dynamicBookSearchFields.js"></script>
     <script defer src="javascript/openLibrarySearchController.js"></script>
 </head>
 <body>
@@ -41,10 +41,10 @@
                     <input type="text" id="search-term" name="searchTerm" required minlength="3" maxlength="50"
                            placeholder="e.g. Lord of the Flies">
                 </fieldset>
+                <!-- Dynamically display search filters with dynamicBookSearchFields.js -->
+                <div id="book-filters"></div>
                 <input type="submit" value="Submit">
             </form>
-            <!-- Dynamically display search filters with dynamicBookSearchFields.js -->
-            <div id="book-filters"></div>
             <!-- Dynamically display search summary with openLibrarySearchController.js -->
             <div id="book-search-result-summary"></div>
             <!-- Dynamically display results after form submission with openLibrarySearchController.js -->
