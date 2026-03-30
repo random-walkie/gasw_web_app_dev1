@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>The Book Hub - Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Gift and Book Hub Web App Coursework">
     <meta name="author" content="Marta Nabais">
     <meta name="keywords" content="HTML, CSS, JavaScript, Web Development, Gift and Book Hub">
     <script defer src="javascript/responsiveTopNavBar.js"></script>
+    <script defer src="javascript/dynamicBookSearchFields.js"></script>
+    <script defer src="javascript/utils.js"></script>
     <script defer src="javascript/openLibrarySearchController.js"></script>
 </head>
 <body>
@@ -40,9 +43,14 @@
                 </fieldset>
                 <input type="submit" value="Submit">
             </form>
+            <!-- Dynamically display search filters with dynamicBookSearchFields.js -->
+            <div id="book-filters"></div>
+            <!-- Dynamically display search summary with openLibrarySearchController.js -->
+            <div id="book-search-result-summary"></div>
+            <!-- Dynamically display results after form submission with openLibrarySearchController.js -->
+            <div id="book-search-result"></div>
         </section>
-        <!-- Dynamically display results after form submission with openLibrarySearchController.js -->
-        <div id="book-search-result"></div>
+
     </main>
     <footer>
         <nav>

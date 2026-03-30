@@ -1,7 +1,7 @@
 /* === 1. Custom Properties (Design Tokens) === */
 /* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lavishly+Yours&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 /* Setting up custom properties */
 :root {
     /* Colours */
@@ -453,7 +453,33 @@ input[type=submit]:focus {
     color: var(--burnt-peach);
     text-decoration: none;
 }
-/* === 11. Animations === */
+
+/* === 11. Book Search Results === */
+#book-search-result {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+#book-search-result article {
+    border: 1px solid var(--dark-coffee-2);
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: var(--champagne-mist);
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/* === 12. Animations === */
 @keyframes fadeIn {
     from {
         opacity: 0;

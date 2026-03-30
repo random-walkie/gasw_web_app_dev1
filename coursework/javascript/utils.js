@@ -35,3 +35,12 @@ function isValidDeliveryMethod(deliveryMethod) {
 function isValidDeliverySpeed(deliverySpeed) {
     return deliverySpeed === "standard" || deliverySpeed === "express" || deliverySpeed === "next-day" || deliverySpeed === "";
 }
+
+function displayMessage(targetElement, message, cssClass) {
+    const messageParagraph = document.createElement("p");
+    messageParagraph.textContent = message;
+    if (cssClass) {
+        messageParagraph.classList.add(cssClass);
+    }
+    targetElement.appendChild(messageParagraph);
+}
