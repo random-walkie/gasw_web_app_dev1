@@ -29,11 +29,8 @@ function displayBookResults(result, data) {
 
         // Add an event listener to the heading to toggle the book details visibility
         heading.addEventListener("click", () => {
-            if (bookDetails.style.display === "none") {
-                bookDetails.style.display = "block";
-            } else {
-                bookDetails.style.display = "none";
-            }
+            // Toggle the visibility of the book details
+            toggleElementVisibility(bookDetails);
             // Toggle the chevron icon
             icon.classList.toggle("fa-chevron-right");
             icon.classList.toggle("fa-chevron-down");

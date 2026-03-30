@@ -59,3 +59,16 @@ function displayMessage(targetElement, message, cssClass) {
     }
     targetElement.appendChild(messageParagraph);
 }
+
+/**
+ * Toggles the visibility of an HTLM element.
+ * @returns {void}
+ * @param htmlElement {HTMLElement} The element to toggle.
+ */
+function toggleElementVisibility(htmlElement) {
+    if (htmlElement.style.display === "none") {
+        htmlElement.style.display = "block";
+    } else {
+        htmlElement.style.display = "none";
+    }
+}
