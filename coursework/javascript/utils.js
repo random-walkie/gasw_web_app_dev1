@@ -119,3 +119,4 @@ function displaySearchSummary(targetElement, numFound) {
         : `Found ${numFound} books.`;
     displayMessage(targetElement, message, "summaryMessage", true);
 }
+

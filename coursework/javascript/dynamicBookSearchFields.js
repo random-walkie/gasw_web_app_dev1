@@ -1,5 +1,5 @@
 "use strict";
-// Module variables
+// Global variables
 const startYear = 1901;
 const currentYear = new Date().getFullYear();
 const startYearString = startYear.toString();
@@ -105,9 +105,11 @@ function applyFilters() {
             "errorMessage", true);
         return;
     }
+    // Display the filtered book search result summary
     displayMessage(bookSearchSummary, `Showing ${filteredResults.length} of ${currentResults.numFound} results after filtering`,
         "summaryMessage", true);
 
+    // Display the filtered book search results
     displayBookResults(bookSearchResult, {docs: filteredResults});
 }
 
@@ -121,7 +123,7 @@ function resetFilters() {
     document.getElementById("endYear").value = currentYearString;
     document.getElementById("onlyShowBooksWithCover").checked = false;
 
-    // Reset the summary message
+    // Re-render the summary message
     const bookSearchSummary = document.getElementById("book-search-result-summary");
     displaySearchSummary(bookSearchSummary, currentResults.numFound);
 

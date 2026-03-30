@@ -1,7 +1,15 @@
 "use strict";
-let currentResults = [];
-function displayBookResults(result, data) {
+// Global variable to store the current search results
+// Initial value is an empty object with empty arrays for docs and numFound
+let currentResults = {docs: [], numFound: 0};
 
+/**
+ * Displays the search results in a card layout.
+ * @param {HTMLElement} result - The element to display the results in.
+ * @param {Object} data - The search results data.
+ * @returns {void}
+ */
+function displayBookResults(result, data) {
     result.innerHTML = "";
     data.docs.forEach(book => {
         // Create a card article element for each book
@@ -14,13 +22,14 @@ function displayBookResults(result, data) {
 
         // Add a header to the card that is always visible
         const heading = document.createElement("h3");
-        heading.textContent = `${book.title}`;
         // Add aria-expanded attribute to the heading for accessibility
         heading.setAttribute("aria-expanded", "false")
         // Make the heading clickable too
         heading.classList.add("clickable");
         // Append the icon to the heading
         heading.appendChild(icon);
+        // Append the book title to the heading with a new text node so chevron appears before the title
+        heading.appendChild(document.createTextNode(book.title));
         // Append the heading to the card
         cardElement.appendChild(heading);
 
@@ -87,6 +96,11 @@ function displayBookResults(result, data) {
     })
 }
 
+/**
+ * Handles the form submission event for the book search form.
+ * @param {Event} evt - The form submission event.
+ * @returns {void}
+ */
 function openLibraryApiCall(evt) {
     evt.preventDefault();
     // Sanitize input: trim + lowercase
