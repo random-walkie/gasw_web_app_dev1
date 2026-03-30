@@ -15,7 +15,6 @@ function createDeliverySpeedField(fieldset) {
     select.id = "deliverySpeed";
     select.name = "deliverySpeed";
     select.required = true;
-    fieldset.appendChild(select);
 
     const options = [
         {value: "", text: "Select a speed…", disabled: true},

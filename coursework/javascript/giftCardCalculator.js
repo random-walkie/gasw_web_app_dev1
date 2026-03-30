@@ -140,11 +140,12 @@ function showPaymentResults(evt) {
         return;
     }
 
+    let deliverySpeed = "";
     let premiumGiftBoxChecked = false;
     addVatParagraphs(result, giftCardValue, quantity);
 
     if (deliveryMethod === "post") {
-        const deliverySpeed = document.getElementById("deliverySpeed").value;
+        deliverySpeed = document.getElementById("deliverySpeed").value;
         if (!isValidDeliverySpeed(deliverySpeed)) {
             displayMessage(result, "Select a valid delivery speed.", "errorMessage", true);
             return;

@@ -195,6 +195,11 @@ main {
     margin-bottom: 3rem;
 }
 
+#features {
+    margin-top: 2rem;
+}
+
+I
 .externalUrl:link {
     color: var(--army-black);
     font-weight: bold;
@@ -413,7 +418,7 @@ input[type=submit]:focus {
     height: 100%;
 }
 
-/* === 10. Footer === */
+/* === 11. Footer === */
 .container > footer {
     background-color: var(--dark-coffee-2);
     color: var(--champagne-mist);
@@ -452,7 +457,7 @@ input[type=submit]:focus {
     text-decoration: none;
 }
 
-/* === 11. Book Search Results === */
+/* === 12. Book Search Results === */
 #book-search-result {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -464,7 +469,6 @@ input[type=submit]:focus {
     border-radius: 5px;
     padding: 1rem;
     background-color: var(--champagne-mist);
-    margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -496,7 +500,7 @@ input[type=submit]:focus {
     width: 8rem;
 }
 
-/* === 12. Messages Format ===*/
+/* === 13. Messages Format ===*/
 .summaryMessage {
     color: var(--dark-coffee-2);
     font-weight: bold;
@@ -542,7 +546,7 @@ input[type=submit]:focus {
 
 }
 
-/* === 13. Animations === */
+/* === 14. Animations === */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -552,7 +556,7 @@ input[type=submit]:focus {
     }
 }
 
-/* === 14. Media Queries === */
+/* === 15. Media Queries === */
 @media only screen and (max-width: 480px) {
     .banner-content h1 {
         font-size: 1.5rem;

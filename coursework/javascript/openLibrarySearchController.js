@@ -54,12 +54,10 @@ function displayBookResults(result, data) {
         if (!book.cover_i) {
             displayMessage(bookDetails, "No cover available", "emptyMessage");
         } else {
-            const bookCover = document.createElement("figure");
             const bookCoverImage = document.createElement("img");
             bookCoverImage.src = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
             bookCoverImage.alt = `Book cover for ${book.title}`;
-            bookCover.appendChild(bookCoverImage);
-            bookDetails.appendChild(bookCover);
+            bookDetails.appendChild(bookCoverImage);
         }
 
         // Create a paragraph element for the author name and append it to the book details div
