@@ -91,7 +91,7 @@ hr {
     justify-content: center;
 }
 
-#gift-card-calculator form {
+#gift-card-form {
     width: 100%;
     max-width: 500px;
 }
@@ -480,12 +480,27 @@ input[type=submit]:focus {
     margin: 1rem 0;
 }
 
+#startYear, #endYear {
+    width: 6rem;
+}
+
+#bookFilters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin-top: 1rem;
+}
+
+#bookFilters button {
+    width: 8rem;
+}
 
 /* === 12. Messages Format ===*/
 .summaryMessage {
     color: var(--dark-coffee-2);
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.25rem;
     padding: 1rem;
     border-radius: 5px;
     border: 2px solid var(--dark-coffee-2);
@@ -497,7 +512,7 @@ input[type=submit]:focus {
 .errorMessage {
     color: var(--reddish-brown);
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 1.25rem;
     padding: 1rem;
     border-radius: 5px;
     border: 2px solid var(--reddish-brown);
@@ -519,6 +534,12 @@ input[type=submit]:focus {
     font-size: 1rem;
     font-weight: bold;
     color: var(--dark-khaki);
+    border: 2px solid var(--dark-khaki);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
 }
 
 /* === 13. Animations === */

@@ -10,57 +10,42 @@ const currentYearString = currentYear.toString();
  * @returns {HTMLFieldSetElement} The fieldset with the range input appended to it.
  */
 function createFilterByYearField(fieldset) {
-    // Create a span element to display the default value
-    const startYearDefault = document.createElement("span");
-    startYearDefault.textContent = startYearString;
-    startYearDefault.id = "startYearDefault";
-
-    // Create a span element to display the default value
-    const endYearDefault = document.createElement("span");
-    endYearDefault.textContent = currentYearString;
-    endYearDefault.id = "endYearDefault";
-
-    // Create the label and input elements
     const startYearLabel = document.createElement("label");
     startYearLabel.setAttribute("for", "startYear");
-    startYearLabel.textContent = "Start Year: ";
-    startYearLabel.appendChild(startYearDefault);
+    startYearLabel.textContent = "Start Year:";
     fieldset.appendChild(startYearLabel);
 
-    // Create the input element for the start year
-    const input = document.createElement("input");
-    input.type = "range";
-    input.id = "startYear";
-    input.name = "startYear";
-    input.min = startYearString;
-    input.max = currentYear.toString();
-    input.value = startYearString;
-    fieldset.appendChild(input);
+    const startInput = document.createElement("input");
+    startInput.type = "number";
+    startInput.id = "startYear";
+    startInput.name = "startYear";
+    startInput.min = startYearString;
+    startInput.max = currentYearString;
+    startInput.step = "1";
+    startInput.value = startYearString;
+    fieldset.appendChild(startInput);
 
-    // Create the label and input elements for the end year
     const endYearLabel = document.createElement("label");
     endYearLabel.setAttribute("for", "endYear");
-    endYearLabel.textContent = "End Year: ";
-    endYearLabel.appendChild(endYearDefault);
+    endYearLabel.textContent = "End Year:";
     fieldset.appendChild(endYearLabel);
 
-    // Create the input element for the end year
     const endInput = document.createElement("input");
-    endInput.type = "range";
+    endInput.type = "number";
     endInput.id = "endYear";
     endInput.name = "endYear";
     endInput.min = startYearString;
-    endInput.max = currentYear.toString();
+    endInput.max = currentYearString;
+    endInput.step = "1";
     endInput.value = currentYearString;
     fieldset.appendChild(endInput);
 
-    // Add event listeners to update the default values when the input value changes
-    input.addEventListener("input", () => {
-        startYearDefault.textContent = input.value;
+    startInput.addEventListener("input", () => {
+        endInput.min = startInput.value;
     });
 
     endInput.addEventListener("input", () => {
-        endYearDefault.textContent = endInput.value;
+        startInput.max = endInput.value;
     });
 }
 
@@ -135,12 +120,10 @@ function resetFilters() {
     document.getElementById("startYear").value = startYearString;
     document.getElementById("endYear").value = currentYearString;
     document.getElementById("onlyShowBooksWithCover").checked = false;
-    // Reset the default values of the filter inputs
-    document.getElementById("startYearDefault").textContent = startYearString;
-    document.getElementById("endYearDefault").textContent = currentYearString;
-    applyFilters();
 
     // Re-render the book search results
+    const bookSearchResult = document.getElementById("book-search-result");
+    bookSearchResult.innerHTML = "";
     displayBookResults(document.getElementById("book-search-result"), {docs: currentResults.docs});
 
     // Reset the summary message
