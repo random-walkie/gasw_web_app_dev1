@@ -25,6 +25,9 @@ function createDeliverySpeedField(fieldset) {
 
     options.forEach(option => {
         const opt = document.createElement("option");
+        if (option.disabled) {
+            opt.disabled = true;
+        }
         opt.value = option.value;
         opt.textContent = option.text;
         select.appendChild(opt);
