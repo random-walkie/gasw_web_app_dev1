@@ -40,6 +40,7 @@ function createFilterByYearField(fieldset) {
     endInput.value = currentYearString;
     fieldset.appendChild(endInput);
 
+    // Add event listeners to update the min and max values of the end input when the start input changes
     startInput.addEventListener("input", () => {
         endInput.min = startInput.value;
     });

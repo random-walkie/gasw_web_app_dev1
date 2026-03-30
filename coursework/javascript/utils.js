@@ -33,7 +33,7 @@ function isValidDeliveryMethod(deliveryMethod) {
  * @returns {boolean} True if the delivery speed is valid, false otherwise.
  */
 function isValidDeliverySpeed(deliverySpeed) {
-    return deliverySpeed === "standard" || deliverySpeed === "express" || deliverySpeed === "next-day" || deliverySpeed === "";
+    return deliverySpeed === "standard" || deliverySpeed === "express" || deliverySpeed === "next-day";
 }
 
 /**

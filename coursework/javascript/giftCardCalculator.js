@@ -125,41 +125,28 @@ function showPaymentResults(evt) {
 
     const giftCardValue = parseFloat(document.getElementById("giftCardValue").value);
     if (!isValidGiftCardValue(giftCardValue)) {
-        const errorParagraph = document.createElement("p");
-        errorParagraph.textContent = "Enter a valid gift card value.";
-        errorParagraph.classList = "errorMessage";
-        result.appendChild(errorParagraph);
+        displayMessage(result, "Enter a valid gift card value.", "errorMessage");
         return;
     }
     const quantity = parseInt(document.getElementById("quantity").value);
     if (!isValidQuantity(quantity)) {
-        const errorParagraph = document.createElement("p");
-        errorParagraph.textContent = "Enter a valid quantity.";
-        errorParagraph.classList = "errorMessage";
-        result.appendChild(errorParagraph);
+        displayMessage(result, "Enter a valid quantity.", "errorMessage");
         return;
     }
 
     const deliveryMethod = document.querySelector("input[name='deliveryMethod']:checked").value;
     if (!isValidDeliveryMethod(deliveryMethod)) {
-        const errorParagraph = document.createElement("p");
-        errorParagraph.textContent = "Select a valid delivery method.";
-        errorParagraph.classList = "errorMessage";
-        result.appendChild(errorParagraph);
+        displayMessage(result, "Select a valid delivery method.", "errorMessage");
         return;
     }
 
-    let deliverySpeed = "";
     let premiumGiftBoxChecked = false;
     addVatParagraphs(result, giftCardValue, quantity);
 
     if (deliveryMethod === "post") {
-        deliverySpeed = document.getElementById("deliverySpeed").value;
+        const deliverySpeed = document.getElementById("deliverySpeed").value;
         if (!isValidDeliverySpeed(deliverySpeed)) {
-            const errorParagraph = document.createElement("p");
-            errorParagraph.textContent = "Select a valid delivery speed.";
-            errorParagraph.classList = "errorMessage";
-            result.appendChild(errorParagraph);
+            displayMessage(result, "Select a valid delivery speed.", "errorMessage", true);
             return;
         }
         premiumGiftBoxChecked = document.getElementById("packaging").checked;
