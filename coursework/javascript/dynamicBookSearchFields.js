@@ -73,7 +73,6 @@ function createOnlyShowBooksWithCoverField(fieldset) {
 function applyFilters() {
     // Get the book search result element, clear its content and display the filtered results
     const bookSearchResult = document.getElementById("book-search-result");
-    bookSearchResult.innerHTML = "";
 
     // Get the values of the filter inputs
     const inputStartYear = document.getElementById("startYear").valueAsNumber;
@@ -122,17 +121,13 @@ function resetFilters() {
     document.getElementById("endYear").value = currentYearString;
     document.getElementById("onlyShowBooksWithCover").checked = false;
 
-    // Re-render the book search results
-    const bookSearchResult = document.getElementById("book-search-result");
-    bookSearchResult.innerHTML = "";
-    displayBookResults(document.getElementById("book-search-result"), {docs: currentResults.docs});
-
     // Reset the summary message
     const bookSearchSummary = document.getElementById("book-search-result-summary");
-    displayMessage(bookSearchSummary, `Found ${currentResults.numFound} books. Showing first 10.`,
-        "summaryMessage", true);
+    displaySearchSummary(bookSearchSummary, currentResults.numFound);
 
-
+    // Re-render the book search results
+    const bookSearchResult = document.getElementById("book-search-result");
+    displayBookResults(bookSearchResult, {docs: currentResults.docs});
 }
 
 /**
@@ -168,7 +163,6 @@ function createResetFiltersButton(fieldset) {
 function displayBookFilters(bookSearchForm) {
     const fieldset = document.createElement("fieldset");
     fieldset.id = "bookFilters";
-    bookSearchForm.appendChild(fieldset);
 
     const legend = document.createElement("legend");
     legend.textContent = "Book Search Filters";
@@ -178,5 +172,6 @@ function displayBookFilters(bookSearchForm) {
     createOnlyShowBooksWithCoverField(fieldset);
     createApplyFiltersButton(fieldset);
     createResetFiltersButton(fieldset);
+    bookSearchForm.appendChild(fieldset);
 
 }

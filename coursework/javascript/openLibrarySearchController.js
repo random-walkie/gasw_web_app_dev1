@@ -2,6 +2,7 @@
 let currentResults = [];
 function displayBookResults(result, data) {
 
+    result.innerHTML = "";
     data.docs.forEach(book => {
         // Create a card article element for each book
         const cardElement = document.createElement("article")
@@ -14,6 +15,8 @@ function displayBookResults(result, data) {
         // Add a header to the card that is always visible
         const heading = document.createElement("h3");
         heading.textContent = `${book.title}`;
+        // Add aria-expanded attribute to the heading for accessibility
+        heading.setAttribute("aria-expanded", "false")
         // Make the heading clickable too
         heading.classList.add("clickable");
         // Append the icon to the heading
@@ -34,7 +37,8 @@ function displayBookResults(result, data) {
             // Toggle the chevron icon
             icon.classList.toggle("fa-chevron-right");
             icon.classList.toggle("fa-chevron-down");
-
+            // Toggle the aria-expanded attribute
+            heading.setAttribute("aria-expanded", heading.getAttribute("aria-expanded") === "false" ? "true" : "false");
         })
 
         // Create figures for the book cover image and append them to the book details div
@@ -120,11 +124,7 @@ function openLibraryApiCall(evt) {
                 return;
             } else {
                 currentResults = data;
-                if (data.numFound > 10) {
-                    displayMessage(bookSearchSummary, `Found ${data.numFound} books. Showing first 10.`, "summaryMessage", true)
-                } else {
-                    displayMessage(bookSearchSummary, `Found ${data.numFound} books.`, "summaryMessage", true)
-                }
+                displaySearchSummary(bookSearchSummary, data.numFound)
             }
             displayBookResults(bookSearchResult, data);
             bookFilters.style.display = "block";

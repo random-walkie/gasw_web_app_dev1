@@ -46,14 +46,29 @@ function isValidBookSearchTerm(searchTerm) {
     return isNotEmpty && isAcceptableLength;
 }
 
+/**
+ * @param inputStartYear The start year to validate.
+ * @param minYear The minimum acceptable year.
+ * @returns {boolean} True if the start year is valid, false otherwise.
+ */
 function isValidStartYear(inputStartYear, minYear) {
     return !Number.isNaN(inputStartYear) && inputStartYear >= minYear && inputStartYear <= new Date().getFullYear();
 }
 
+/**
+ * @param inputEndYear The end year to validate.
+ * @param minYear The minimum acceptable year.
+ * @returns {boolean} True if the end year is valid, false otherwise.
+ */
 function isValidEndYear(inputEndYear, minYear) {
     return !Number.isNaN(inputEndYear) && inputEndYear >= minYear && inputEndYear <= new Date().getFullYear();
 }
 
+/**
+ * @param inputStartYear The start year to validate.
+ * @param inputEndYear The end year to validate.
+ * @returns {boolean} True if the start year is less than or equal to the end year, false otherwise.
+ */
 function isValidYearRange(inputStartYear, inputEndYear) {
     return inputStartYear <= inputEndYear;
 }
@@ -90,4 +105,17 @@ function toggleElementVisibility(htmlElement) {
     } else {
         htmlElement.style.display = "none";
     }
+}
+
+/**
+ * Displays a summary message about the search results.
+ * @param {HTMLElement} targetElement - The element to display the message in.
+ * @param {number} numFound - The number of books found.
+ * @returns {void}
+ */
+function displaySearchSummary(targetElement, numFound) {
+    const message = numFound > 10
+        ? `Found ${numFound} books. Showing first 10.`
+        : `Found ${numFound} books.`;
+    displayMessage(targetElement, message, "summaryMessage", true);
 }
