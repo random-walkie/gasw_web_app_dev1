@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>The Book Hub - Library</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Gift and Book Hub Web App Coursework">
@@ -41,9 +40,9 @@
                     <input type="text" id="search-term" name="searchTerm" required minlength="3" maxlength="50"
                            placeholder="e.g. Lord of the Flies">
                 </fieldset>
+                <input type="submit" value="Submit">
                 <!-- Dynamically display search filters with dynamicBookSearchFields.js -->
                 <div id="book-filters"></div>
-                <input type="submit" value="Submit">
             </form>
             <!-- Dynamically display search summary with openLibrarySearchController.js -->
             <div id="book-search-result-summary"></div>

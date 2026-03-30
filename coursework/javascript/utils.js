@@ -50,8 +50,14 @@ function isValidBookSearchTerm(searchTerm) {
  * @param targetElement The element to which the message will be appended.
  * @param message The message to be displayed.
  * @param cssClass The CSS class to be applied to the message paragraph.
+ * @param clearTargetHtml Whether to clear the target element's HTML before appending the message.
+ * @returns {void}
  */
-function displayMessage(targetElement, message, cssClass) {
+function displayMessage(targetElement, message, cssClass, clearTargetHtml = false) {
+    if (clearTargetHtml) {
+        targetElement.innerHTML = "";
+    }
+
     const messageParagraph = document.createElement("p");
     messageParagraph.textContent = message;
     if (cssClass) {
@@ -61,7 +67,7 @@ function displayMessage(targetElement, message, cssClass) {
 }
 
 /**
- * Toggles the visibility of an HTLM element.
+ * Toggles the visibility of an HTML element.
  * @returns {void}
  * @param htmlElement {HTMLElement} The element to toggle.
  */

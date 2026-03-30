@@ -1,5 +1,5 @@
 "use strict";
-
+let currentResults = [];
 function displayBookResults(result, data) {
 
     data.docs.forEach(book => {
@@ -39,7 +39,7 @@ function displayBookResults(result, data) {
 
         // Create figures for the book cover image and append them to the book details div
         if (!book.cover_i) {
-            displayMessage(bookDetails, "No cover available");
+            displayMessage(bookDetails, "No cover available", "emptyMessage");
         } else {
             const bookCover = document.createElement("figure");
             const bookCoverImage = document.createElement("img");
@@ -51,22 +51,23 @@ function displayBookResults(result, data) {
 
         // Create a paragraph element for the author name and append it to the book details div
         if (!book.author_name) {
-            displayMessage(bookDetails, "No author available");
+            displayMessage(bookDetails, "No author available", "emptyMessage");
         } else {
-            displayMessage(bookDetails, `Author: ${book.author_name.join(", ")}`);
+            displayMessage(bookDetails, `Author: ${book.author_name.join(", ")}`,
+                "bookDetailsMessage");
         }
 
         // Create a paragraph element for the publication date and append it to the book details div
         if (!book.first_publish_year) {
-            displayMessage(bookDetails, "No publication date available");
+            displayMessage(bookDetails, "No publication date available", "emptyMessage");
         } else {
-            displayMessage(bookDetails, `Publication year: ${book.first_publish_year}`);
+            displayMessage(bookDetails, `Publication year: ${book.first_publish_year}`, "bookDetailsMessage");
         }
 
         // Create a paragraph element for the number of editions and append it to the book details div
-        displayMessage(bookDetails, `Number of editions: ${book.edition_count}`)
+        displayMessage(bookDetails, `Number of editions: ${book.edition_count}`, "bookDetailsMessage")
         // Create a paragraph element for the availability status and append it to the book details div
-        displayMessage(bookDetails, `Availability: ${book.ebook_access}`)
+        displayMessage(bookDetails, `Availability: ${book.ebook_access}`, "bookDetailsMessage")
 
         // Create an external link element and append it to the book details div
         const externalLinkOpenLibrary = document.createElement("a");
@@ -82,7 +83,6 @@ function displayBookResults(result, data) {
     })
 }
 
-
 function openLibraryApiCall(evt) {
     evt.preventDefault();
     // Sanitize input: trim + lowercase
@@ -90,12 +90,11 @@ function openLibraryApiCall(evt) {
 
     // book-search-summary is outside the book-search-result div, so it can be displayed before the results
     const bookSearchSummary = document.getElementById("book-search-result-summary");
-    bookSearchSummary.innerHTML = "";
 
     // Check if the search term is valid
     if (!isValidBookSearchTerm(searchTerm)) {
         displayMessage(bookSearchSummary, "Please enter a valid book title or author name",
-            "errorMessage");
+            "errorMessage", true);
         return;
     }
     // Build search URL
@@ -105,24 +104,34 @@ function openLibraryApiCall(evt) {
     const bookSearchResult = document.getElementById("book-search-result");
     bookSearchResult.innerHTML = "";
 
+    displayMessage(bookSearchSummary, "Searching...", "summaryMessage", true);
+    // Results should be displayed before showing extra filters
+    const bookFilters = document.getElementById("book-filters");
+    bookFilters.innerHTML = "";
+    bookFilters.style.display = "none";
     // Make the API call using fetch
     fetch(searchUrl)
         // Check if the response is ok (status in the range 200-299), if not, reject the promise
         // and return an error message
         .then(response => response.ok ? response.json() : Promise.reject(new Error("Something went wrong with the service. Please try again later.")))
         .then(data => {
-            if (data.numFound > 10) {
-                displayMessage(bookSearchSummary, `Found ${data.numFound} books. Showing first 10:`)
-            } else {
-                displayMessage(bookSearchSummary, `Found ${data.numFound} books.`)
-            }
             if (data.docs.length === 0) {
-                displayMessage(bookSearchResult, "No books found", "errorMessage");
+                displayMessage(bookSearchSummary, "No books found", "errorMessage", true);
+                return;
+            } else {
+                currentResults = data;
+                if (data.numFound > 10) {
+                    displayMessage(bookSearchSummary, `Found ${data.numFound} books. Showing first 10.`, "summaryMessage", true)
+                } else {
+                    displayMessage(bookSearchSummary, `Found ${data.numFound} books.`, "summaryMessage", true)
+                }
             }
             displayBookResults(bookSearchResult, data);
+            bookFilters.style.display = "block";
+            displayBookFilters(bookFilters);
         })
         .catch(error => {
-            displayMessage(bookSearchResult, error.message, "errorMessage");
+            displayMessage(bookSearchSummary, error.message, "errorMessage", true);
         })
 }
 
