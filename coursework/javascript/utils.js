@@ -36,6 +36,21 @@ function isValidDeliverySpeed(deliverySpeed) {
     return deliverySpeed === "standard" || deliverySpeed === "express" || deliverySpeed === "next-day" || deliverySpeed === "";
 }
 
+/**
+ * @param searchTerm The search term to validate.
+ * @returns {boolean} True if the search term is valid, false otherwise.
+ */
+function isValidBookSearchTerm(searchTerm) {
+    const isNotEmpty = searchTerm.trim() !== "";
+    const isAcceptableLength = searchTerm.length >= 3 && searchTerm.length <= 50;
+    return isNotEmpty && isAcceptableLength;
+}
+
+/**
+ * @param targetElement The element to which the message will be appended.
+ * @param message The message to be displayed.
+ * @param cssClass The CSS class to be applied to the message paragraph.
+ */
 function displayMessage(targetElement, message, cssClass) {
     const messageParagraph = document.createElement("p");
     messageParagraph.textContent = message;
