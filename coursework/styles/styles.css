@@ -462,9 +462,11 @@ input[type=submit]:focus {
     color: var(--color-text-muted);
 }
 
-.container > footer a {
-    color: var(--color-accent);
-    text-decoration: none;
+.container > footer img {
+    display: block;
+    margin: 1rem auto 0;
+    border: 0;
+    opacity: 0.75;
 }
 
 /* === 12. Book Search Results === */
