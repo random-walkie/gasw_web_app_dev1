@@ -187,6 +187,32 @@ main {
     padding: 1rem;
 }
 
+.externalUrl:link, .externalUrl:visited {
+    font-weight: bold;
+}
+
+/* light backgrounds */
+main .externalUrl:link,
+#book-search-result .externalUrl:link {
+    color: var(--color-text-secondary); /* #574A34 — 7:1 on parchment */
+}
+
+main .externalUrl:visited,
+#book-search-result .externalUrl:visited {
+    color: var(--color-shadow); /* #432716 — 11:1 on parchment */
+}
+
+/* dark backgrounds */
+aside .externalUrl:link,
+footer .externalUrl:link {
+    color: var(--color-text-light); /* #F6E5C6 — 9:1 on aside, 12:1 on footer */
+}
+
+aside .externalUrl:visited,
+footer .externalUrl:visited {
+    color: var(--color-text-muted); /* #BCAA8E — 5:1 on aside, 6.6:1 on footer */
+}
+
 #about {
     max-width: 700px;
     margin: 0 auto;
@@ -210,16 +236,6 @@ main {
     margin-top: 2rem;
 }
 
-.externalUrl:link {
-    color: var(--color-text);
-    font-weight: bold;
-}
-
-.externalUrl:visited {
-    color: var(--color-accent);
-    font-weight: bold;
-}
-
 aside {
     flex: 0 0 260px;
     margin-left: 1.5rem;
@@ -232,6 +248,15 @@ aside {
     position: sticky;
     top: 1rem;
     align-self: flex-start;
+}
+
+aside h3 {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    text-align: center;
 }
 
 aside p {
@@ -251,7 +276,7 @@ aside p:last-child {
 
 #book-of-week h3 {
     font-size: 0.85rem;
-    color: var(--color-accent);
+    color: var(--color-text-light);
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.08em;
@@ -293,8 +318,6 @@ aside p:last-child {
 
 #book-of-week a {
     font-size: 0.85rem;
-    color: var(--color-accent);
-    text-decoration: none;
 }
 
 #book-of-week a:hover {
@@ -603,6 +626,18 @@ input[type=submit]:focus {
         top: 0;
     }
 
+    fieldset {
+        grid-template-columns: 1fr;
+    }
+
+    #bookFilters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #bookFilters button {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
