@@ -33,12 +33,6 @@ function displayBookResults(result, data) {
         // Append the heading to the card
         cardElement.appendChild(heading);
 
-        // Create a div element for the book details
-        const bookDetails = document.createElement("div");
-        bookDetails.classList.add("book-details");
-        // Hide the book details initially
-        bookDetails.style.display = "none";
-
         // Add an event listener to the heading to toggle the book details visibility
         heading.addEventListener("click", () => {
             // Toggle the visibility of the book details
@@ -49,6 +43,12 @@ function displayBookResults(result, data) {
             // Toggle the aria-expanded attribute
             heading.setAttribute("aria-expanded", heading.getAttribute("aria-expanded") === "false" ? "true" : "false");
         })
+
+        // Create a div element for the book details
+        const bookDetails = document.createElement("div");
+        bookDetails.classList.add("book-details");
+        // Hide the book details initially
+        bookDetails.style.display = "none";
 
         // Create figures for the book cover image and append them to the book details div
         if (!book.cover_i) {

@@ -104,6 +104,7 @@ function applyFilters() {
     if (filteredResults.length === 0) {
         displayMessage(bookSearchSummary, "No books found matching the selected filters.",
             "errorMessage", true);
+        bookSearchResult.innerHTML = "";
         return;
     }
     // Display the filtered book search result summary
